@@ -1,0 +1,33 @@
+---
+import WhatsApp from "../icons/WhatsApp.icon.astro";
+
+const href =
+	"https://wa.me/+5493515061753?text=Hola%20Alex!%20Quiero%20saber%20mas%20sobre%20clases%20de%20salsa%20y%20bachata.";
+
+// https://api.whatsapp.com/send/?phone=%2B5493515061753&text=Hola+Alex%21+Quiero+saber+mas+sobre+clases+de+salsa+y+bachata.&type=phone_number&app_absent=0
+---
+
+<a
+	{...Astro.props}
+	href={href}
+	target="_blank"
+	referrerpolicy="no-referrer"
+	rel="noopener noreferrer"
+	class="inline-flex
+    items-center
+    bg-green-500
+    hover:bg-green-600
+    text-white
+    font-semibold
+    px-4
+    py-2
+    rounded-lg
+    shadow-md
+    cursor-pointer
+    transition
+    duration-300
+    ease-in-out"
+>
+	<WhatsApp class="w-5 h-5 mr-2" />
+	<slot />
+</a>

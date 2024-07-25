@@ -1,4 +1,5 @@
 ---
+import ContactWpp from "../components/ContactWpp.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -8,24 +9,50 @@ import Layout from "../layouts/Layout.astro";
 	keywords="clases salsa Córdoba, clases bachata Córdoba, aprender a bailar salsa, aprender a bailar bachata, academia de salsa y bachata en Córdoba"
 >
 	<main
-		class="mt-40 flex justify-center section w-full mx-auto container md:max-w-2xl lg:max-w-4xl"
+		class="mt-40 w-full md:max-w-2xl lg:max-w-4xl flex flex-col items-center"
 	>
+		<ContactWpp>Quiero saber mas!</ContactWpp>
+		<hr class="mb-20 w-0" />
+
+		<p class="bg-cyan-600 p-4 w-96 shadow-lg rounded-md">
+			Martes de Salsa:  21:00 - 22:30<br />Jueves de Bachata:  21:00 - 22:30
+		</p>
 		<iframe
-			class="max-w-96 mt-40"
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.7386783558286!2d-64.1921534234898!3d-31.421325196491754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a286813a64f5%3A0x723582dc58e76c6c!2sAv.%20V%C3%A9lez%20Sarsfield%20520%2C%20X5000%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1721697276469!5m2!1ses-419!2sar"
-			width="600"
-			height="450"
-			style="border:0;"
+			class="mb-20 h-96 w-96 border-none"
+			src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1702.3692519873446!2d-64.189578!3d-31.421330000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a3a0e80a326f%3A0xef01065cef7c5957!2sStudio%20Multiespacio!5e0!3m2!1ses-419!2sar!4v1721874598902!5m2!1ses-419!2sar"
 			loading="lazy"
 			referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-		<!-- <iframe
-			class=" max-w-96"
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.6778841152222!2d-64.18483462348973!3d-31.42299979657274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2900953e59d%3A0x75b9712059d86bfc!2sChacabuco%20474%2C%20X5000IIE%20X5000IIE%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1721697437926!5m2!1ses-419!2sar"
-			width="600"
-			height="450"
-			style="border:0;"
+		<p class="bg-cyan-700 p-4 w-96 shadow-lg rounded-md">
+			Sábado:<br />- Introductorio:  15:00 - 16:30<br />- Salsa:  16:30 - 18:00<br/>- Bachata:  18:00 - 19:30
+		</p>
+		<iframe
+			class="mb-20 h-96 w-96 border-none"
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1702.3388808364557!2d-64.18356231399227!3d-31.42300316921113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a29007ba43a1%3A0x71d68825809b990e!2sBest%20Club!5e0!3m2!1ses-419!2sar!4v1721874739899!5m2!1ses-419!2sar"
 			loading="lazy"
-			referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+			referrerpolicy="no-referrer-when-downgrade"></iframe>
 	</main>
 </Layout>
+
+<!-- <div class="bg-gray-100 p-4">
+	<button class="bg-blue-500 text-white px-4 py-2 rounded-md mb-4" onclick="toggleTab('martesJueves')">Horarios de Martes y Jueves</button>
+	<div id="martesJueves" class="hidden">
+		<p class="bg-white p-4 shadow-lg">Martes: Salsa de 21:00 a 22:30<br>Jueves: Bachata de 21:00 a 22:30</p>
+	</div>
+	<button class="bg-green-500 text-white px-4 py-2 rounded-md" onclick="toggleTab('sábado')">Horarios de Sábado</button>
+	<div id="sábado" class="hidden">
+		<p class="bg-white p-4 shadow-lg">Sábado:<br>- Introductorio de 15:00 a 16:30<br>- Salsa de 16:30 a 18:00<br>- Bachata de 18:00 a 19:30</p>
+	</div>
+</div>
+<script is:inline>
+	const toggleTab = (tabId) => {
+		const tabs = document.querySelectorAll('.hidden');
+		tabs.forEach(tab => {
+			if (tab.id === tabId) {
+				tab.classList.toggle('hidden');
+			} else {
+				tab.classList.add('hidden');
+			}
+		});
+	};
+</script> -->
