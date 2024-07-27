@@ -1,36 +1,34 @@
 ---
 import ContactWpp from "../components/ContactWpp.astro";
+import Schedules from "../components/Schedules.astro";
+import Maps from "../components/Maps.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-	title="SALSA CORDOBA - Clases de salsa y bachata en Córdoba"
+	title="SALSA CÓRDOBA - Clases de salsa y bachata en Córdoba"
 	description="Clases de salsa en córdoba, clases de bachata en córdoba, academia de baile, donde hacer salsa, donde hacer bachata, aprender salsa, aprender bachata."
 	keywords="clases salsa Córdoba, clases bachata Córdoba, aprender a bailar salsa, aprender a bailar bachata, academia de salsa y bachata en Córdoba"
 >
-	<main
-		class="mt-40 w-full md:max-w-2xl lg:max-w-4xl flex flex-col items-center"
-	>
-		<ContactWpp>Quiero saber mas!</ContactWpp>
+	<main class="px-4">
 		<hr class="mb-20 w-0" />
 
-		<p class="bg-cyan-600 p-4 w-96 shadow-lg rounded-md">
-			Martes de Salsa:  21:00 - 22:30<br />Jueves de Bachata:  21:00 - 22:30
-		</p>
-		<iframe
-			class="mb-20 h-96 w-96 border-none"
-			src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1702.3692519873446!2d-64.189578!3d-31.421330000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a3a0e80a326f%3A0xef01065cef7c5957!2sStudio%20Multiespacio!5e0!3m2!1ses-419!2sar!4v1721874598902!5m2!1ses-419!2sar"
-			loading="lazy"
-			referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<SectionContainer class="flex justify-center p-4">
+			<ContactWpp>Quiero saber mas!</ContactWpp>
+		</SectionContainer>
 
-		<p class="bg-cyan-700 p-4 w-96 shadow-lg rounded-md">
-			Sábado:<br />- Introductorio:  15:00 - 16:30<br />- Salsa:  16:30 - 18:00<br/>- Bachata:  18:00 - 19:30
-		</p>
-		<iframe
-			class="mb-20 h-96 w-96 border-none"
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1702.3388808364557!2d-64.18356231399227!3d-31.42300316921113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a29007ba43a1%3A0x71d68825809b990e!2sBest%20Club!5e0!3m2!1ses-419!2sar!4v1721874739899!5m2!1ses-419!2sar"
-			loading="lazy"
-			referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<SectionContainer class="pb-8 md:pb-[11rem]">
+			<Schedules />
+		</SectionContainer>
+
+		<SectionContainer class="flex justify-center p-4">
+			<ContactWpp>Quiero saber mas!</ContactWpp>
+		</SectionContainer>
+
+		<SectionContainer class="pb-8 md:pb-[11rem]">
+			<Maps />
+		</SectionContainer>
 	</main>
 </Layout>
 
