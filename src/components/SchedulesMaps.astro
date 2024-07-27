@@ -1,0 +1,101 @@
+---
+import GoogleMap from "../icons/GoogleMap.astro";
+import GoogleMapPin from "../icons/GoogleMapPin.astro";
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+	<div
+		id="toggle-container"
+		class="cursor-pointer rounded-md bg-red_l dark:bg-red_d text-light p-1 md:flex md:flex-col"
+	>
+		<div>
+			<p
+				class="p-2 shadow-lg flex justify-center font-medium md:text-2xl whitespace-nowrap border-b"
+			>
+				En la semana
+			</p>
+			<p class="p-2 shadow-lg flex justify-between">
+				<span class="md:text-xl whitespace-nowrap">Martes de Salsa:</span>
+				<span class="md:text-xl whitespace-nowrap">21:00 - 22:30</span>
+			</p>
+			<p class="p-2 shadow-lg flex justify-between">
+				<span class="md:text-xl whitespace-nowrap">Jueves de Bachata:</span>
+				<span class="md:text-xl whitespace-nowrap">21:00 - 22:30</span>
+			</p>
+		</div>
+		<div class="relative h-9 mt-2 pb-1">
+			<p
+				id="address"
+				class="absolute toggle-element transition-all duration-500 p-2 shadow-lg flex justify-center items-center md:text-xl whitespace-nowrap border-t bg-red_l text-light w-full"
+			>
+				<GoogleMap class="size-5 mr-1" />
+				<span>Av. Vélez Sarsfield 520</span>
+			</p>
+			<iframe
+				id="map"
+				class="absolute toggle-element transition-all duration-500 h-[40vh] w-full mt-1 border-none rounded"
+				src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1702.3692519873446!2d-64.189578!3d-31.421330000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a3a0e80a326f%3A0xef01065cef7c5957!2sStudio%20Multiespacio!5e0!3m2!1ses-419!2sar!4v1721874598902!5m2!1ses-419!2sar"
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+	</div>
+
+	<div
+		id="toggle-container2"
+		class="cursor-pointer rounded-md bg-dark text-gold_l p-1 md:flex md:flex-col transition-all duration-300"
+	>
+		<div>
+			<p
+				class="p-2 shadow-lg flex justify-center font-medium md:text-2xl whitespace-nowrap border-b"
+			>
+				Los sábados
+			</p>
+			<p class="p-2 shadow-lg flex justify-between">
+				<span class="md:text-xl whitespace-nowrap">Introductorio:</span>
+				<span class="md:text-xl whitespace-nowrap">15:00 - 16:30</span>
+			</p>
+			<p class="p-2 shadow-lg flex justify-between">
+				<span class="md:text-xl whitespace-nowrap">Especial de Salsa:</span>
+				<span class="md:text-xl whitespace-nowrap">16:30 - 18:00</span>
+			</p>
+			<p class="p-2 shadow-lg flex justify-between">
+				<span class="md:text-xl whitespace-nowrap">Especial de Bachata:</span>
+				<span class="md:text-xl whitespace-nowrap">18:00 - 19:30</span>
+			</p>
+		</div>
+		<div class="relative h-9 mt-2 pb-1">
+			<p
+				id="address2"
+				class="absolute toggle-element transition-all duration-500 p-2 shadow-lg flex justify-center items-center md:text-xl whitespace-nowrap border-t bg-dark text-gold_l w-full"
+			>
+				<GoogleMapPin class="size-5 mr-1" />
+				<span>Bv. Chacabuco 472</span>
+			</p>
+			<iframe
+				id="map2"
+				class="absolute toggle-element transition-all duration-500 h-[40vh] w-full mt-1 border-none rounded"
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1702.3388808364557!2d-64.18356231399227!3d-31.42300316921113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a29007ba43a1%3A0x71d68825809b990e!2sBest%20Club!5e0!3m2!1ses-419!2sar!4v1721874739899!5m2!1ses-419!2sar"
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+	</div>
+</div>
+
+<script is:inline>
+	let toggle = "address";
+	const toggleContainer = () => {
+		document.querySelectorAll(".toggle-element").forEach((element) => {
+			element.style.scale = element.id === toggle ? "1" : "0";
+			element.classList[element.id !== toggle ? "add" : "remove"]("h-0");
+		});
+		document
+			.getElementById("toggle-container")
+			.classList[toggle === "map" ? "add" : "remove"]("h-[55vh]");
+		toggle = toggle === "map" ? "address" : "map";
+	};
+
+	document
+		.getElementById("toggle-container")
+		.addEventListener("click", toggleContainer);
+	toggleContainer();
+</script>

@@ -1,9 +1,10 @@
 ---
 import ContactWpp from "../components/ContactWpp.astro";
-import Schedules from "../components/Schedules.astro";
-import Maps from "../components/Maps.astro";
-import SectionContainer from "../components/SectionContainer.astro";
 import Layout from "../layouts/Layout.astro";
+import Maps from "../components/Maps.astro";
+import Schedules from "../components/Schedules.astro";
+import SchedulesMaps from "../components/SchedulesMaps.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 ---
 
 <Layout
@@ -15,7 +16,7 @@ import Layout from "../layouts/Layout.astro";
 		<hr class="mb-20 w-0" />
 
 		<SectionContainer class="flex justify-center p-4">
-			<ContactWpp>Quiero saber mas!</ContactWpp>
+			<ContactWpp>!Quiero saber mas!</ContactWpp>
 		</SectionContainer>
 
 		<SectionContainer class="pb-8 md:pb-[11rem]">
@@ -23,11 +24,15 @@ import Layout from "../layouts/Layout.astro";
 		</SectionContainer>
 
 		<SectionContainer class="flex justify-center p-4">
-			<ContactWpp>Quiero saber mas!</ContactWpp>
+			<ContactWpp>!Quiero saber mas!</ContactWpp>
 		</SectionContainer>
 
 		<SectionContainer class="pb-8 md:pb-[11rem]">
 			<Maps />
+		</SectionContainer>
+
+		<SectionContainer class="pb-8 md:pb-[11rem]">
+			<SchedulesMaps />
 		</SectionContainer>
 	</main>
 </Layout>
