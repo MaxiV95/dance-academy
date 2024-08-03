@@ -18,7 +18,7 @@ import SectionContainer from "../components/SectionContainer.astro";
 		<SectionContainer class="flex justify-center p-4">
 			<ContactWpp>!Quiero saber mas!</ContactWpp>
 		</SectionContainer>
-
+<!-- 
 		<SectionContainer class="pb-8 md:pb-[11rem]">
 			<Schedules />
 		</SectionContainer>
@@ -29,33 +29,10 @@ import SectionContainer from "../components/SectionContainer.astro";
 
 		<SectionContainer class="pb-8 md:pb-[11rem]">
 			<Maps />
-		</SectionContainer>
+		</SectionContainer> -->
 
 		<SectionContainer class="pb-8 md:pb-[11rem]">
 			<SchedulesMaps />
 		</SectionContainer>
 	</main>
 </Layout>
-
-<!-- <div class="bg-gray-100 p-4">
-	<button class="bg-blue-500 text-white px-4 py-2 rounded-md mb-4" onclick="toggleTab('martesJueves')">Horarios de Martes y Jueves</button>
-	<div id="martesJueves" class="hidden">
-		<p class="bg-white p-4 shadow-lg">Martes: Salsa de 21:00 a 22:30<br>Jueves: Bachata de 21:00 a 22:30</p>
-	</div>
-	<button class="bg-green-500 text-white px-4 py-2 rounded-md" onclick="toggleTab('sábado')">Horarios de Sábado</button>
-	<div id="sábado" class="hidden">
-		<p class="bg-white p-4 shadow-lg">Sábado:<br>- Introductorio de 15:00 a 16:30<br>- Salsa de 16:30 a 18:00<br>- Bachata de 18:00 a 19:30</p>
-	</div>
-</div>
-<script is:inline>
-	const toggleTab = (tabId) => {
-		const tabs = document.querySelectorAll('.hidden');
-		tabs.forEach(tab => {
-			if (tab.id === tabId) {
-				tab.classList.toggle('hidden');
-			} else {
-				tab.classList.add('hidden');
-			}
-		});
-	};
-</script> -->
