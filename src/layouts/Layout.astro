@@ -37,16 +37,18 @@ const fbAppId = "0";
 		<meta name="keywords" content={keywords} />
 		<meta name="robots" content="index, follow" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
 		<ViewTransitions />
 	</head>
-	<body class="relative text-black/80 dark:text-white">
+	<body class="relative text-white">
 		<div
-			class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,255,0,0.1),rgba(0,0,255,0.1))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,0,255,0.4),rgba(0,0,255,0.09))]"
+			class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-950
+      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,0,255,0.4),rgba(0,0,255,0.09))]"
 		>
 		</div>
-		<Header></Header>
+		<Header />
 
 		<slot />
 
@@ -59,11 +61,18 @@ const fbAppId = "0";
 				scroll-behavior: smooth;
 			}
 			body {
+				font-family: "Lora", serif;
+				font-optical-sizing: auto;
+				font-weight: 400;
+				font-style: normal;
 				display: flex;
 				flex-direction: column;
 				min-height: 100vh;
 			}
-			h1, h2, h3, h4 {
+			h1,
+			h2,
+			h3,
+			h4 {
 				text-wrap: balance;
 			}
 			p {

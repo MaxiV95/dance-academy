@@ -1,10 +1,9 @@
 ---
 import ContactWpp from "../components/ContactWpp.astro";
 import Layout from "../layouts/Layout.astro";
-import Maps from "../components/Maps.astro";
-import Schedules from "../components/Schedules.astro";
 import SchedulesMaps from "../components/SchedulesMaps.astro";
 import SectionContainer from "../components/SectionContainer.astro";
+import Info from "../components/Info.astro";
 ---
 
 <Layout
@@ -13,23 +12,15 @@ import SectionContainer from "../components/SectionContainer.astro";
 	keywords="clases salsa Córdoba, clases bachata Córdoba, aprender a bailar salsa, aprender a bailar bachata, academia de salsa y bachata en Córdoba"
 >
 	<main class="px-4">
-		<hr class="mb-20 w-0" />
+		<hr class="mb-10 md:mb-20 w-0" />
 
-		<SectionContainer class="flex justify-center p-4">
-			<ContactWpp>!Quiero saber mas!</ContactWpp>
-		</SectionContainer>
-<!-- 
-		<SectionContainer class="pb-8 md:pb-[11rem]">
-			<Schedules />
+		<SectionContainer>
+			<Info></Info>
 		</SectionContainer>
 
 		<SectionContainer class="flex justify-center p-4">
-			<ContactWpp>!Quiero saber mas!</ContactWpp>
+			<ContactWpp>¡Quiero saber mas!</ContactWpp>
 		</SectionContainer>
-
-		<SectionContainer class="pb-8 md:pb-[11rem]">
-			<Maps />
-		</SectionContainer> -->
 
 		<SectionContainer class="pb-8 md:pb-[11rem]">
 			<SchedulesMaps />
