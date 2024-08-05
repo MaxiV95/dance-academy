@@ -1,12 +1,10 @@
 ---
-import GoogleMap from "../icons/GoogleMap.astro";
-import GoogleMapPin from "../icons/GoogleMapPin.astro";
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 	<div
 		id="toggle-container"
-		class="px-1 md:flex md:flex-col justify-between cursor-pointer rounded-md bg-slate-700/50 text-yellow-300"
+		class="px-1 md:flex md:flex-col justify-between cursor-pointer rounded-md bg-slate-900/60"
 	>
 		<div>
 			<p
@@ -33,17 +31,17 @@ import GoogleMapPin from "../icons/GoogleMapPin.astro";
 				referrerpolicy="no-referrer-when-downgrade"></iframe>
 			<p
 				id="address"
-				class="toggle-element absolute md:relative bottom-0 p-1 w-full shadow-lg flex justify-center items-center md:text-xl whitespace-nowrap border-t md:border-t-0 text-yellow-300 transition-all duration-500"
+				class="toggle-element absolute md:relative bottom-0 p-1 w-full shadow-lg flex justify-center items-center md:text-xl whitespace-nowrap border-t md:border-t-0 transition-all duration-500"
 			>
-				<GoogleMap class="size-5" />
-				<span>Av. Vélez Sarsfield 520</span>
+				<span>📍 Av. Vélez Sarsfield 520</span>
+				<span class="md:hidden text-xs">. (ver mapa)</span>
 			</p>
 		</div>
 	</div>
 
 	<div
 		id="toggle-container2"
-		class="px-1 md:flex md:flex-col justify-between cursor-pointer rounded-md bg-slate-600/50 text-yellow-300"
+		class="px-1 md:flex md:flex-col justify-between cursor-pointer rounded-md bg-slate-900/60"
 	>
 		<div>
 			<p
@@ -74,10 +72,10 @@ import GoogleMapPin from "../icons/GoogleMapPin.astro";
 				referrerpolicy="no-referrer-when-downgrade"></iframe>
 			<p
 				id="address2"
-				class="toggle-element2 absolute md:relative bottom-0 p-1 w-full shadow-lg flex justify-center items-center md:text-xl whitespace-nowrap border-t md:border-t-0 text-yellow-300 transition-all duration-500"
+				class="toggle-element2 absolute md:relative bottom-0 p-1 w-full shadow-lg flex justify-center items-center md:text-xl whitespace-nowrap border-t md:border-t-0 transition-all duration-500"
 			>
-				<GoogleMapPin class="size-5" />
-				<span>Bv. Chacabuco 472</span>
+				<span>📍 Bv. Chacabuco 472</span>
+				<span class="md:hidden text-xs">. (ver mapa)</span>
 			</p>
 		</div>
 	</div>
