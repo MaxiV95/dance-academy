@@ -12,6 +12,7 @@ const { description, title, keywords } = Astro.props;
 const imgUrl = "https://maxiv95.github.io/dance-academy/images/banner.webp";
 const baseUrl = "https://www.salsaencordoba.com.ar/";
 const fbAppId = "0";
+const fontUrl = "https://maxiv95.github.io/dance-academy/fonts/TROGLOP_.ttf"
 ---
 
 <!doctype html>
@@ -39,7 +40,10 @@ const fbAppId = "0";
 		<meta name="generator" content={Astro.generator} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+			rel="stylesheet"
+		/>
 		<ViewTransitions />
 	</head>
 	<body class="relative text-white">
@@ -79,10 +83,28 @@ const fbAppId = "0";
 				text-wrap: pretty;
 				line-height: 1.1rem;
 			}
+			.fontOnest {
+				font-family: "Onest Variable", system-ui, sans-serifs;
+			}
 			@media (prefers-reduced-motion: reduce) {
 				html {
 					scroll-behavior: auto;
 				}
+			}
+
+			@font-face {
+				font-family: "TrogloP";
+				src: url('https://maxiv95.github.io/dance-academy/fonts/TROGLOP_.ttf') format("truetype");
+				font-weight: normal;
+				font-style: normal;
+			}
+			.troglo-title {
+				font-family: "TrogloP", sans-serif;
+				color: #000; /* Color del texto negro */
+				text-shadow:
+					0 0 3px #ff0,
+					0 0 4px #ff0, 
+					0 0 5px #ff0;
 			}
 
 			.animate {
