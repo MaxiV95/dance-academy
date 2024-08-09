@@ -1,0 +1,40 @@
+---
+const { title='', baseUrl='' } = Astro.props;
+---
+<!-- Contenedor para almacenar los datos -->
+<div id="structured-data-container" 
+     data-title={title}
+     data-base-url={baseUrl}>
+</div>
+
+<!-- Script para generar JSON-LD dinámicamente -->
+<script type="text/javascript" is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById('structured-data-container');
+    const title = container.dataset.title;
+    const baseUrl = container.dataset.baseUrl;
+
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": title,
+      "url": baseUrl
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(jsonLd);
+    document.head.appendChild(script);
+  });
+</script>
+
+  <!-- Datos estructurados JSON-LD -->
+  <!-- <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{title}",
+      "url": "{baseUrl}",
+      "description": "{description}"
+    }
+    </script> -->

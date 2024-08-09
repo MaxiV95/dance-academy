@@ -12,38 +12,60 @@ const { description, title, keywords } = Astro.props;
 const imgUrl = "https://maxiv95.github.io/dance-academy/images/banner.webp";
 const baseUrl = "https://www.salsaencordoba.com.ar/";
 const fbAppId = "0";
-const fontUrl = "https://maxiv95.github.io/dance-academy/fonts/TROGLOP_.ttf"
+// const fontUrl = "https://maxiv95.github.io/dance-academy/fonts/TROGLOP_.ttf";
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{title}</title>
-		<meta name="title" property="og:title" content={title} />
-		<meta name="description" property="og:description" content={description} />
-		<meta name="image" property="og:image" content={imgUrl} />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={`${baseUrl}`} />
-		<meta property="fb:app_id" content={`${fbAppId}`} />
-		<meta property="fb:admins" content={`${fbAppId}`} />
-		<meta name="author" content="Maximiliano Van Megroot" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+		<!-- Meta-etiquetas para SEO -->
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
 		<meta name="language" content="es-AR" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Meta-etiqueta Canonical -->
+		<link rel="canonical" href={baseUrl} />
+
+		<!-- Meta-etiquetas Open Graph para redes sociales -->
+		<meta property="fb:admins" content={fbAppId} />
+		<meta property="fb:app_id" content={fbAppId} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={imgUrl} />
+		<meta property="og:locale" content="es_AR" />
+		<meta property="og:site_name" content={title} />
+		<meta property="og:title" content={title} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={baseUrl} />
+
+		<!-- Metadatos geográficos -->
 		<meta name="geo.region" content="AR" />
 		<meta name="geo.placename" content="Córdoba" />
 		<meta name="geo.position" content="-31.421361, -64.189472" />
 		<meta name="ICBM" content="-31.421361, -64.189472" />
-		<meta name="keywords" content={keywords} />
-		<meta name="robots" content="index, follow" />
+
+		<!-- Información adicional -->
+		<meta name="author" content="Maximiliano Van Megroot" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+		<!-- Fuentes -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
 			rel="stylesheet"
 		/>
+
+		<meta
+			name="google-site-verification"
+			content="Pw594qDKAiBdRXrcHRW7nV-SgdZ_IjdzfGNbRSDsMXk"
+		/>
+
 		<ViewTransitions />
 	</head>
 	<body class="relative text-white">
@@ -94,7 +116,8 @@ const fontUrl = "https://maxiv95.github.io/dance-academy/fonts/TROGLOP_.ttf"
 
 			@font-face {
 				font-family: "TrogloP";
-				src: url('https://maxiv95.github.io/dance-academy/fonts/TROGLOP_.ttf') format("truetype");
+				src: url("https://maxiv95.github.io/dance-academy/fonts/TROGLOP_.ttf")
+					format("truetype");
 				font-weight: normal;
 				font-style: normal;
 			}
@@ -103,7 +126,7 @@ const fontUrl = "https://maxiv95.github.io/dance-academy/fonts/TROGLOP_.ttf"
 				color: #000; /* Color del texto negro */
 				text-shadow:
 					0 0 3px #ff0,
-					0 0 4px #ff0, 
+					0 0 4px #ff0,
 					0 0 5px #ff0;
 			}
 
