@@ -1,9 +1,11 @@
 ---
-import ContactWpp from "../components/ContactWpp.astro";
 import Layout from "../layouts/Layout.astro";
+
+import ContactWpp from "../components/ContactWpp.astro";
+import Info from "../components/Info.astro";
+import Instagram from "../components/Instagram.astro";
 import SchedulesMaps from "../components/SchedulesMaps.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import Info from "../components/Info.astro";
 ---
 
 <Layout
@@ -15,15 +17,23 @@ import Info from "../components/Info.astro";
 		<hr class="mb-10 md:mb-20 w-0" />
 
 		<SectionContainer>
-			<Info></Info>
+			<Info />
 		</SectionContainer>
 
 		<SectionContainer class="flex justify-center p-4">
 			<ContactWpp>¡Quiero saber mas!</ContactWpp>
 		</SectionContainer>
 
-		<SectionContainer class="pb-8 md:pb-[11rem]">
+		<SectionContainer>
 			<SchedulesMaps />
+		</SectionContainer>
+
+		<SectionContainer class="flex justify-center p-4">
+			<ContactWpp>¡Quiero saber mas!</ContactWpp>
+		</SectionContainer>
+
+		<SectionContainer class="flex justify-center">
+			<Instagram />
 		</SectionContainer>
 	</main>
 </Layout>
