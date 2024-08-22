@@ -10,7 +10,9 @@ interface Props {
 
 const { description, title, keywords } = Astro.props;
 const imgUrl = "https://maxiv95.github.io/dance-academy/images/banner.webp";
-const baseUrl = "https://www.salsaencordoba.com.ar/";
+// const baseUrl = "https://www.salsaencordoba.com.ar/";
+const baseUrl = "https://maxiv95.github.io/dance-academy/";
+const canonicalUrl = "https://maxiv95.github.io/dance-academy/";
 const fbAppId = "0";
 // const fontUrl = "https://maxiv95.github.io/dance-academy/fonts/TROGLOP_.ttf";
 ---
@@ -29,7 +31,7 @@ const fbAppId = "0";
 		<meta name="robots" content="index, follow" />
 
 		<!-- Meta-etiqueta Canonical -->
-		<link rel="canonical" href={baseUrl} />
+		<link rel="canonical" href={canonicalUrl} />
 
 		<!-- Meta-etiquetas Open Graph para redes sociales -->
 		<meta property="fb:admins" content={fbAppId} />
