@@ -56,12 +56,31 @@ const fbAppId = "0";
 		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 
 		<!-- Fuentes -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
 			rel="stylesheet"
+		/> -->
+		<!-- Preload de la fuente para mejorar el rendimiento -->
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+			as="style"
 		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<!-- Carga perezosa de las fuentes -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+			rel="stylesheet"
+			media="print"
+		/>
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
 
 		<meta
 			name="google-site-verification"

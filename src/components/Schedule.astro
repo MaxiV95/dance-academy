@@ -1,0 +1,47 @@
+---
+interface Horario {
+	title: string;
+	schedule: string;
+	description: string;
+}
+
+interface Props {
+	title: string;
+	horario: Horario[];
+}
+
+const { title, horario } = Astro.props;
+---
+
+<div>
+	<p
+		class="p-1
+      shadow-lg
+      flex
+      justify-center
+      font-semibold
+      md:text-2xl
+      whitespace-nowrap
+      border-b
+      rounded-md
+      bg-yellow-300
+      text-gray-950"
+	>
+		{title}
+	</p>
+	{
+		horario.map(({ title, schedule, description }) => {
+			return (
+				<>
+					<p class="p-1 shadow-lg flex justify-between font-semibold">
+						<span class="md:text-xl whitespace-nowrap">{title}</span>
+						<span class="md:text-xl whitespace-nowrap">{schedule}</span>
+					</p>
+					<p class="p-1 pt-0 shadow-lg flex justify-between">
+						<span class="md:text-md whitespace-nowrap">{description}</span>
+					</p>
+				</>
+			);
+		})
+	}
+</div>

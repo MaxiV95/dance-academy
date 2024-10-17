@@ -1,125 +1,88 @@
 ---
+import Schedule from "./Schedule.astro";
+import Mapa from "./Mapa.astro";
 
+const horarioSemana = [
+	{
+		title: "Martes de Salsa:",
+		schedule: "21:00 - 22:30",
+		description: "(Para todos los niveles y desde cero)",
+	},
+	{
+		title: "Jueves de Bachata:",
+		schedule: "21:00 - 22:30",
+		description: "(Para todos los niveles y desde cero)",
+	},
+];
+
+const mapaSemana = {
+	direction: "Av. Vélez Sarsfield 520",
+	sucursal: "Studio",
+	ref: "(Ref.: En casi esq. Clínica Oultton)",
+	src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.738838215796!2d-64.18957800012365!3d-31.421320792983366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a354a4bcafe7%3A0xd21551ed11f10e1d!2sBachata%20en%20C%C3%B3rdoba%20-%20Clases%20de%20Bachata%20en%20Cordoba%20-%20Suc.%20V%C3%A9lez%20Sarsfield!5e0!3m2!1ses-419!2sar!4v1722976368719!5m2!1ses-419!2sar",
+};
+
+const horarioFinde = [
+	{
+		title: "Mix Salsa Bachata:",
+		schedule: "15:00 - 16:30",
+		description: "(Introductorio desde cero)",
+	},
+	{
+		title: "Especial de Salsa:",
+		schedule: "16:30 - 18:00",
+		description: "(Para los que ya bailan)",
+	},
+	{
+		title: "Especial de Bachata:",
+		schedule: "18:00 - 19:30",
+		description: "(Para los que ya bailan)",
+	},
+];
+
+const mapaFinde = {
+	direction: "Bv. Chacabuco 472",
+	sucursal: "Best Club",
+	ref: "(Ref.: A la vuelta univ. Siglo 21)",
+	src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.738838215796!2d-64.18957800012365!3d-31.421320792983366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329841e71ca7df%3A0xf3cf7a4a63d7400a!2sSalsa%20en%20C%C3%B3rdoba%20-%20Clases%20de%20Salsa%20en%20Cordoba!5e0!3m2!1ses-419!2sar!4v1722976307419!5m2!1ses-419!2sar",
+};
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 	<div
-		id="toggle-container"
-		class="px-1 md:flex md:flex-col justify-between cursor-pointer rounded-md bg-slate-900/60"
+		class="toggle-container px-1 md:flex md:flex-col justify-between cursor-pointer md:cursor-auto rounded-md bg-slate-900/70"
 	>
-		<div>
-			<p
-				class="p-1 shadow-lg flex justify-center font-medium md:text-2xl whitespace-nowrap border-b"
-			>
-				En la semana
-			</p>
-			<p class="p-1 shadow-lg flex justify-between">
-				<span class="md:text-xl whitespace-nowrap">Martes de Salsa:</span>
-				<span class="md:text-xl whitespace-nowrap">21:00 - 22:30</span>
-			</p>
-			<p class="p-1 shadow-lg flex justify-between">
-				<span class="md:text-xl whitespace-nowrap">Jueves de Bachata:</span>
-				<span class="md:text-xl whitespace-nowrap">21:00 - 22:30</span>
-			</p>
-		</div>
-
-		<div id="map-container" class="relative transition-all duration-500">
-			<iframe
-				id="map"
-				title="Dirección academia en: Av. Vélez Sarsfield 520"
-				class="toggle-element absolute md:relative bottom-0 h-[40vh] w-full border-none rounded duration-500"
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.738838215796!2d-64.18957800012365!3d-31.421320792983366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a354a4bcafe7%3A0xd21551ed11f10e1d!2sBachata%20en%20C%C3%B3rdoba%20-%20Clases%20de%20Bachata%20en%20Cordoba%20-%20Suc.%20V%C3%A9lez%20Sarsfield!5e0!3m2!1ses-419!2sar!4v1722976368719!5m2!1ses-419!2sar"
-				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"></iframe>
-			<p
-				id="address"
-				class="toggle-element absolute md:relative bottom-0 p-1 w-full shadow-lg flex justify-center items-center md:text-xl whitespace-nowrap border-t md:border-t-0 transition-all duration-500"
-			>
-				<span>📍 Sucursal: Studio - Av. Vélez Sarsfield 520</span>
-				<span class="md:hidden text-xs">. (ver mapa)</span>
-			</p>
-		</div>
+		<Schedule title="En la semana" horario={horarioSemana} />
+		<Mapa {...mapaSemana} />
 	</div>
 
 	<div
-		id="toggle-container2"
-		class="px-1 md:flex md:flex-col justify-between cursor-pointer rounded-md bg-slate-900/60"
+		class="toggle-container px-1 md:flex md:flex-col justify-between cursor-pointer md:cursor-auto rounded-md bg-slate-900/70"
 	>
-		<div>
-			<p
-				class="p-1 shadow-lg flex justify-center font-medium md:text-2xl whitespace-nowrap border-b"
-			>
-				Los sábados
-			</p>
-			<p class="p-1 shadow-lg flex justify-between">
-				<span class="md:text-xl whitespace-nowrap">Introductorio:</span>
-				<span class="md:text-xl whitespace-nowrap">15:00 - 16:30</span>
-			</p>
-			<p class="p-1 shadow-lg flex justify-between">
-				<span class="md:text-xl whitespace-nowrap">Especial de Salsa:</span>
-				<span class="md:text-xl whitespace-nowrap">16:30 - 18:00</span>
-			</p>
-			<p class="p-1 shadow-lg flex justify-between">
-				<span class="md:text-xl whitespace-nowrap">Especial de Bachata:</span>
-				<span class="md:text-xl whitespace-nowrap">18:00 - 19:30</span>
-			</p>
-		</div>
-
-		<div id="map-container2" class="relative transition-all duration-500">
-			<iframe
-				id="map2"
-				title="Dirección academia en: Chacabuco 472"
-				class="toggle-element2 absolute md:relative bottom-0 h-[40vh] w-full border-none rounded duration-500"
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.738838215796!2d-64.18957800012365!3d-31.421320792983366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329841e71ca7df%3A0xf3cf7a4a63d7400a!2sSalsa%20en%20C%C3%B3rdoba%20-%20Clases%20de%20Salsa%20en%20Cordoba!5e0!3m2!1ses-419!2sar!4v1722976307419!5m2!1ses-419!2sar"
-				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"></iframe>
-			<p
-				id="address2"
-				class="toggle-element2 absolute md:relative bottom-0 p-1 w-full shadow-lg flex justify-center items-center md:text-xl whitespace-nowrap border-t md:border-t-0 transition-all duration-500"
-			>
-				<span>📍 Sucursal: Best - Bv. Chacabuco 472</span>
-				<span class="md:hidden text-xs">. (ver mapa)</span>
-			</p>
-		</div>
+		<Schedule title="Especial de sábados" horario={horarioFinde} />
+		<Mapa {...mapaFinde} />
 	</div>
 </div>
 
 <script is:inline>
-	const handleToggle = () => {
-		let toggle = "address";
-		const toggleContainer = () => {
-			document.querySelectorAll(".toggle-element").forEach((element) => {
-				element.style.scale = element.id === toggle ? "1" : "0";
-				element.classList[element.id !== toggle ? "add" : "remove"]("h-0");
-			});
-			document.getElementById("map-container").style.height =
-				toggle === "map" ? "40vh" : "2rem";
-			toggle = toggle === "map" ? "address" : "map";
-		};
-		document
-			.getElementById("toggle-container")
-			.addEventListener("click", toggleContainer);
-		toggleContainer();
-
-		let toggle2 = "address2";
-		const toggleContainer2 = () => {
-			document.querySelectorAll(".toggle-element2").forEach((element) => {
-				element.style.scale = element.id === toggle2 ? "1" : "0";
-				element.classList[element.id !== toggle2 ? "add" : "remove"]("h-0");
-			});
-			document.getElementById("map-container2").style.height =
-				toggle2 === "map2" ? "40vh" : "2rem";
-			toggle2 = toggle2 === "map2" ? "address2" : "map2";
-		};
-		document
-			.getElementById("toggle-container2")
-			.addEventListener("click", toggleContainer2);
-		toggleContainer2();
-	};
-
-	const checkMediaQuery = () => {
+	document.addEventListener("DOMContentLoaded", () => {
 		const mediaQuery = window.matchMedia("(max-width: 768px)");
-		if (mediaQuery.matches) handleToggle();
-	};
-	checkMediaQuery();
+		if (mediaQuery.matches) {
+			document.querySelectorAll(".toggle-container").forEach((container) => {
+				let toggle = "address";
+				const toggleContainer = () => {
+					container.querySelectorAll(".toggle-element").forEach((element) => {
+						const hasToggleClass = element.classList.contains(toggle);
+						element.style.scale = hasToggleClass ? "1" : "0";
+						element.classList[!hasToggleClass ? "add" : "remove"]("h-0");
+					});
+					container.querySelector(".map-container").style.height =
+						toggle === "map" ? "41vh" : "3.25rem";
+					toggle = toggle === "map" ? "address" : "map";
+				};
+				container.addEventListener("click", toggleContainer);
+				toggleContainer();
+			});
+		}
+	});
 </script>

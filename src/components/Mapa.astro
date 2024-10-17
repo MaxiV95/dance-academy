@@ -1,0 +1,48 @@
+---
+interface Props {
+	direction: string;
+	sucursal: string;
+	ref: string;
+	src: string;
+}
+
+const { direction, sucursal, ref, src } = Astro.props;
+---
+
+<div class="map-container relative transition-all duration-500">
+		<div
+			class="map-wrapper map toggle-element absolute md:relative bottom-0 h-[41vh] w-full border-none rounded duration-500"
+			data-direction={direction}
+			data-src={src}
+		>
+		</div>
+	<p
+		class="address toggle-element absolute md:relative bottom-0 p-1 w-full shadow-lg flex flex-col justify-center items-center md:text-xl whitespace-nowrap border-t md:border-t-0 transition-all duration-500"
+	>
+		<span>📍 Sucursal: {sucursal} - {direction}</span>
+		<span>{ref}<span class="inline md:hidden"> (ver mapa)</span></span>
+	</p>
+</div>
+
+<script>
+	const mapWrappers = document.querySelectorAll('.map-wrapper');
+	mapWrappers.forEach((mapWrapper) => {
+		const element = mapWrapper as HTMLElement;
+		const direction = element.dataset.direction;
+		const src = element.dataset.src;
+		const observer = new IntersectionObserver((entries) => {
+			if (entries[0].isIntersecting) {
+				element.innerHTML = `
+					<iframe
+						class="h-full w-full border-none rounded duration-500"
+						title="Dirección academia en: ${direction}"
+						src="${src}"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>`;
+				observer.disconnect();
+			}
+		});		
+		observer.observe(element);
+	});
+</script>

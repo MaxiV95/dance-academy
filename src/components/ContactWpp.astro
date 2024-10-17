@@ -7,17 +7,16 @@ const href =
 // https://api.whatsapp.com/send/?phone=%2B5493515061753&text=Hola+Alex%21+Quiero+saber+mas+sobre+clases+de+salsa+y+bachata.&type=phone_number&app_absent=0
 ---
 
-<!-- {...Astro.props} -->
 <a
 	href={href}
+	aria-label="Abrir enlace de WhatsApp en una nueva pestaña"
 	target="_blank"
 	referrerpolicy="no-referrer"
 	rel="noopener noreferrer"
 	class="inline-flex
     items-center
-    bg-green-500
-    hover:bg-green-600
-    text-white
+   
+		wpp
     font-semibold
     text-xl
     md:text-2xl
@@ -34,3 +33,15 @@ const href =
 	<WhatsApp class="size-8 md:size-8 mr-2" />
 	<slot />
 </a>
+
+<style>
+	.wpp {
+		background-color: #006a43;
+		border: 2px solid #006a43;
+		color: white;
+	}
+	.wpp:hover {
+		background-color: #ffffff;
+		color: #006a43;
+	}
+</style>
