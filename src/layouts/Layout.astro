@@ -82,8 +82,9 @@ const fbAppId = "0";
 
 		<ViewTransitions />
 	</head>
-	<body class="relative text-white bg-sky-950 min-h-screen w-full bg-cover bg-center bg-[url('https://maxiv95.github.io/dance-academy/images/Designer.webp')]">
-
+	<body
+		class="relative text-white bg-sky-950 min-h-screen w-full bg-cover bg-center bg-[url('https://maxiv95.github.io/dance-academy/images/Designer.webp')]"
+	>
 		<Header />
 
 		<slot />
@@ -114,6 +115,13 @@ const fbAppId = "0";
 			p {
 				text-wrap: pretty;
 				line-height: 1.1rem;
+			}
+			.text-shadow {
+				text-shadow:
+					1px 1px 1px black,
+					-1px -1px 0px black,
+					1px -1px 1px black,
+					-1px 1px 1px black;
 			}
 			.fontOnest {
 				font-family: "Onest Variable", system-ui, sans-serifs;

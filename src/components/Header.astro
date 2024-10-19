@@ -1,129 +1,68 @@
 ---
 import SC from "../icons/SC.astro";
+import BgRed from "./BgRed.astro";
+import BgYellow from "./BgYellow.astro";
 ---
 
 <header
 	class="mx-auto p-2 mt-6 w-full top-0 z-10 flex flex-col items-center bg-slate-950/60"
 >
-	<div class="show-on-small flex-col items-center justify-evenly">
+	<div class="flex xl:hidden flex-col items-center justify-evenly">
 		<div class="w-full flex items-center justify-evenly">
-			<SC class="h-20 w-10" />
+			<SC class="h-[18vw] w-[9vw]" />
 			<div>
 				<div class="relative px-1 flex flex-col items-center">
-					<div class="gradient-red-background w-full"></div>
-					<div class="radial-red-background w-full"></div>
-					<h1 class="text-[44px]/[44px] troglo-title">Salsa En</h1>
+					<BgRed>
+						<h1 class="px-1 text-[10vw]/[10vw] troglo-title">Salsa En</h1>
+					</BgRed>
 				</div>
 				<div class="relative px-1 flex flex-col items-center">
-					<div class="gradient-red-background w-[88%]"></div>
-					<div class="radial-red-background w-[88%]"></div>
-					<h1 class="text-[44px]/[44px] troglo-title">Cordoba</h1>
+					<BgRed>
+						<h1 class="px-1 text-[10vw]/[10vw] troglo-title">Cordoba</h1>
+					</BgRed>
 				</div>
 			</div>
 		</div>
 		<div class="w-full flex flex-col items-center justify-evenly">
 			<div class="relative px-1 flex items-center justify-evenly">
-				<div class="gradient-yellow-background w-full"></div>
-				<div class="radial-yellow-background w-full"></div>
-				<h2
-					class="text-sm fontOnest text-white"
-					style="text-shadow: 1px 1px 1px black, -1px -1px 0px black, 1px -1px 1px black, -1px 1px 1px black;"
-				>
-					DALE UN GIRO A TU VIDA - CORTA LA SEMANA
-				</h2>
+				<BgYellow>
+					<h2 class="text-[3.5vw]/[4.5vw] lg:text-[3vw]/[4vw] text-shadow">
+						DALE UN GIRO A TU VIDA - CORTA LA SEMANA
+					</h2>
+				</BgYellow>
 			</div>
 			<div class="relative px-1 flex items-center justify-evenly">
-				<div class="gradient-yellow-background w-full"></div>
-				<div class="radial-yellow-background w-full"></div>
-				<h2
-					class="text-sm fontOnest text-white"
-					style="text-shadow: 1px 1px 1px black, -1px -1px 0px black, 1px -1px 1px black, -1px 1px 1px black;"
-				>
-					HACE DE LOS SÁBADOS TU DIA ESPECIAL
-				</h2>
+				<BgYellow>
+					<h2 class="text-[3.5vw]/[4.5vw] lg:text-[3vw]/[4vw] text-shadow">
+						HACE DE LOS SÁBADOS TU DIA ESPECIAL
+					</h2>
+				</BgYellow>
 			</div>
+			<h3 class="px-1 text-[2.5vw]/[3.5vw]  lg:text-[2vw]/[2.25vw] text-shadow bg-orange-800 font-mono">
+				ARRANCA A PARTIR DE CUALQUIER ÉPOCA DEL AÑO - SUMÁTE AHORA
+			</h3>
 		</div>
 	</div>
 
-	<div class="show-on-large p-2 items-center justify-evenly">
-		<SC class="mr-10" />
+	<div class="hidden xl:flex p-2 items-center justify-evenly">
+		<SC class="h-[10vw] w-[5vw]" />
 		<div class="flex flex-col items-center">
 			<div class="relative px-2 flex items-center justify-evenly">
-				<div class="gradient-red-background w-full"></div>
-				<div class="radial-red-background w-full"></div>
-				<h1 class="text-6xl xl:text-8xl troglo-title">Salsa En Cordoba</h1>
+				<BgRed>
+					<h1 class="px-2 text-[6.5vw]/[6.5vw] troglo-title">Salsa En Cordoba</h1>
+				</BgRed>
 			</div>
 			<div class="relative px-2 flex items-center justify-evenly">
-				<div class="gradient-yellow-background w-full"></div>
-				<div class="radial-yellow-background w-full"></div>
-				<h2
-					class="text-3xl fontOnest text-white"
-					style="text-shadow: 1px 1px 1px black, -1px -1px 0px black, 1px -1px 1px black, -1px 1px 1px black;"
-				>
-					DALE UN GIRO A TU VIDA - CORTA LA SEMANA - HACE DE LOS SÁBADOS TU DIA
-					ESPECIAL
-				</h2>
+				<BgYellow>
+					<h2 class="text-[2vw]/[2vw] text-shadow">
+						DALE UN GIRO A TU VIDA - CORTA LA SEMANA - HACE DE LOS SÁBADOS TU
+						DIA ESPECIAL
+					</h2>
+				</BgYellow>
 			</div>
+			<h3 class="px-3 text-[1.5vw]/[1.5vw] text-shadow bg-orange-800 font-mono">
+				ARRANCA A PARTIR DE CUALQUIER ÉPOCA DEL AÑO - SUMÁTE AHORA
+			</h3>
 		</div>
 	</div>
 </header>
-
-<style>
-	.show-on-small,
-	.show-on-large {
-		display: none;
-	}
-	@media (max-width: 767px) {
-		.show-on-small {
-			display: flex;
-		}
-	}
-	@media (min-width: 768px) {
-		.show-on-large {
-			display: flex;
-		}
-	}
-
-	.gradient-red-background {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		height: 40%;
-		background: linear-gradient(0turn, red, rgba(0, 0, 0, 0), red);
-		z-index: -1;
-	}
-	.radial-red-background {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		height: 40%;
-		background: radial-gradient(circle, black 80%, red 100%);
-		z-index: -2;
-	}
-
-	.gradient-yellow-background {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		height: 90%;
-		background: linear-gradient(
-			0turn,
-			yellow 10%,
-			rgba(0, 0, 0, 0) 45%,
-			yellow 90%
-		);
-		z-index: -1;
-	}
-	.radial-yellow-background {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		height: 90%;
-		background: radial-gradient(circle, rgb(255, 170, 0) 80%, yellow 100%);
-		z-index: -2;
-	}
-</style>

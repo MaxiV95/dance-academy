@@ -1,4 +1,6 @@
 ---
+import BgYellow from "./BgYellow.astro";
+
 interface Horario {
 	title: string;
 	schedule: string;
@@ -12,24 +14,26 @@ interface Props {
 
 const { title, horario } = Astro.props;
 ---
-
 <div>
-	<p
-		class="p-1
-      shadow-lg
-      flex
-      justify-center
-      font-semibold
-			text-2xl
-      md:text-2xl
-      whitespace-nowrap
-      border-b
-      rounded-md
-      bg-yellow-300
-      text-gray-950"
-	>
-		{title}
-	</p>
+	<div class="relative z-10">
+		<BgYellow>
+			<p
+			class="
+			shadow-lg
+			flex
+			justify-center
+			font-semibold
+			text-3xl
+			md:text-4xl
+			whitespace-nowrap
+			border-b
+			rounded-lg
+			text-shadow"
+			>
+			{title}
+		</p>
+	</BgYellow>
+</div>
 	{
 		horario.map(({ title, schedule, description }) => {
 			return (
