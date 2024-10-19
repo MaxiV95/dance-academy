@@ -13,25 +13,31 @@ const href =
 	target="_blank"
 	referrerpolicy="no-referrer"
 	rel="noopener noreferrer"
-	class="inline-flex
-    items-center
-   
-		wpp
+	class="
+    wpp
     font-semibold
-    text-xl
-    md:text-2xl
-    m-8
+    text-3xl
+    md:text-5xl
+    m-6
     px-4
     py-2
-    rounded-lg
+    rounded-xl
     shadow-md
     cursor-pointer
     transition
     duration-300
-    ease-in-out"
+    ease-in-out
+    flex
+    flex-col
+    md:flex-row
+    items-center"
 >
-	<WhatsApp class="size-8 md:size-8 mr-2" />
-	<slot />
+<div class="flex items-center space-x-2 md:space-x-4">
+	<WhatsApp class="w-10 h-10 md:w-11 md:h-11" />
+	<span class="whitespace-nowrap">1234 5678</span>
+</div>
+
+<span class="mt-2 md:mt-0 md:ml-4 whitespace-nowrap">¡Quiero saber más!</span>
 </a>
 
 <style>

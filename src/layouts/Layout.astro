@@ -54,14 +54,12 @@ const fbAppId = "0";
 		<meta name="author" content="Maximiliano Van Megroot" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+		<meta
+			name="google-site-verification"
+			content="Pw594qDKAiBdRXrcHRW7nV-SgdZ_IjdzfGNbRSDsMXk"
+		/>
 
 		<!-- Fuentes -->
-		<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
-			rel="stylesheet"
-		/> -->
 		<!-- Preload de la fuente para mejorar el rendimiento -->
 		<link
 			rel="preload"
@@ -82,18 +80,9 @@ const fbAppId = "0";
 			/>
 		</noscript>
 
-		<meta
-			name="google-site-verification"
-			content="Pw594qDKAiBdRXrcHRW7nV-SgdZ_IjdzfGNbRSDsMXk"
-		/>
-
 		<ViewTransitions />
 	</head>
-	<body class="relative text-white">
-		<div
-			class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-950 bg-[url('https://maxiv95.github.io/dance-academy/images/Designer.jpeg')] bg-cover bg-center"
-		>
-		</div>
+	<body class="relative text-white bg-sky-950 min-h-screen w-full bg-cover bg-center bg-[url('https://maxiv95.github.io/dance-academy/images/Designer.webp')]">
 
 		<Header />
 
@@ -141,6 +130,7 @@ const fbAppId = "0";
 					format("truetype");
 				font-weight: normal;
 				font-style: normal;
+				font-display: swap;
 			}
 			.troglo-title {
 				font-family: "TrogloP", sans-serif;

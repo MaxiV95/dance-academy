@@ -20,6 +20,7 @@ const { title, horario } = Astro.props;
       flex
       justify-center
       font-semibold
+			text-2xl
       md:text-2xl
       whitespace-nowrap
       border-b
@@ -32,7 +33,7 @@ const { title, horario } = Astro.props;
 	{
 		horario.map(({ title, schedule, description }) => {
 			return (
-				<>
+				<div class="px-1">
 					<p class="p-1 shadow-lg flex justify-between font-semibold">
 						<span class="md:text-xl whitespace-nowrap">{title}</span>
 						<span class="md:text-xl whitespace-nowrap">{schedule}</span>
@@ -40,7 +41,7 @@ const { title, horario } = Astro.props;
 					<p class="p-1 pt-0 shadow-lg flex justify-between">
 						<span class="md:text-md whitespace-nowrap">{description}</span>
 					</p>
-				</>
+				</div>
 			);
 		})
 	}

@@ -4,28 +4,36 @@ interface Props {
 	sucursal: string;
 	ref: string;
 	src: string;
+	lema: string;
 }
 
-const { direction, sucursal, ref, src } = Astro.props;
+const { direction, sucursal, ref, src, lema } = Astro.props;
 ---
 
-<div class="map-container relative transition-all duration-500">
+<div>
+	<p
+		class="p-1 shadow-lg flex justify-center font-semibold md:text-sm whitespace-nowrap border-b bg-yellow-300 text-gray-950"
+	>
+		{lema}
+	</p>
+	<div class="map-container relative transition-all duration-500">
 		<div
 			class="map-wrapper map toggle-element absolute md:relative bottom-0 h-[41vh] w-full border-none rounded duration-500"
 			data-direction={direction}
 			data-src={src}
 		>
 		</div>
-	<p
-		class="address toggle-element absolute md:relative bottom-0 p-1 w-full shadow-lg flex flex-col justify-center items-center md:text-xl whitespace-nowrap border-t md:border-t-0 transition-all duration-500"
-	>
-		<span>📍 Sucursal: {sucursal} - {direction}</span>
-		<span>{ref}<span class="inline md:hidden"> (ver mapa)</span></span>
-	</p>
+		<p
+			class="address toggle-element absolute md:relative bottom-0 p-1 w-full shadow-lg flex flex-col justify-center items-center md:text-lg whitespace-nowrap border-t md:border-t-0 transition-all duration-500"
+		>
+			<span>📍 Sucursal: {sucursal} - {direction}</span>
+			<span>{ref}<span class="inline md:hidden"> (ver mapa)</span></span>
+		</p>
+	</div>
 </div>
 
 <script>
-	const mapWrappers = document.querySelectorAll('.map-wrapper');
+	const mapWrappers = document.querySelectorAll(".map-wrapper");
 	mapWrappers.forEach((mapWrapper) => {
 		const element = mapWrapper as HTMLElement;
 		const direction = element.dataset.direction;
@@ -42,7 +50,7 @@ const { direction, sucursal, ref, src } = Astro.props;
 					></iframe>`;
 				observer.disconnect();
 			}
-		});		
+		});
 		observer.observe(element);
 	});
 </script>

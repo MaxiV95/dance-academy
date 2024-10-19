@@ -48,36 +48,38 @@ const mapaFinde = {
 };
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 	<div
-		class="toggle-container px-1 md:flex md:flex-col justify-between cursor-pointer md:cursor-auto rounded-md bg-slate-900/70"
+		class="toggle-container  md:flex md:flex-col justify-between cursor-pointer md:cursor-auto rounded-md bg-slate-900/70"
 	>
 		<Schedule title="En la semana" horario={horarioSemana} />
-		<Mapa {...mapaSemana} />
+		<Mapa lema="DALE UN GIRO A LA SEMANA" {...mapaSemana} />
 	</div>
 
 	<div
-		class="toggle-container px-1 md:flex md:flex-col justify-between cursor-pointer md:cursor-auto rounded-md bg-slate-900/70"
+		class="toggle-container  md:flex md:flex-col justify-between cursor-pointer md:cursor-auto rounded-md bg-slate-900/70"
 	>
-		<Schedule title="Especial de sábados" horario={horarioFinde} />
-		<Mapa {...mapaFinde} />
+		<Schedule title="Los sábados" horario={horarioFinde} />
+		<Mapa lema="HACE DE LOS SÁBADOS TU DIA ESPECIAL" {...mapaFinde} />
 	</div>
 </div>
 
-<script is:inline>
+<script>
 	document.addEventListener("DOMContentLoaded", () => {
-		const mediaQuery = window.matchMedia("(max-width: 768px)");
+		const mediaQuery = window.matchMedia("(max-width: 767px)");
 		if (mediaQuery.matches) {
 			document.querySelectorAll(".toggle-container").forEach((container) => {
 				let toggle = "address";
 				const toggleContainer = () => {
-					container.querySelectorAll(".toggle-element").forEach((element) => {
-						const hasToggleClass = element.classList.contains(toggle);
-						element.style.scale = hasToggleClass ? "1" : "0";
-						element.classList[!hasToggleClass ? "add" : "remove"]("h-0");
+					const containerElement = container as HTMLElement;
+					containerElement.querySelectorAll(".toggle-element").forEach((element) => {
+						const elementHTML = element as HTMLElement;
+						const hasToggleClass = elementHTML.classList.contains(toggle);
+						elementHTML.style.transform = hasToggleClass ? "scale(1)" : "scale(0)";
+						elementHTML.classList[!hasToggleClass ? "add" : "remove"]("h-0");
 					});
-					container.querySelector(".map-container").style.height =
-						toggle === "map" ? "41vh" : "3.25rem";
+					const mapContainer = containerElement.querySelector(".map-container") as HTMLElement;
+					if (mapContainer) mapContainer.style.height = toggle === "map" ? "41vh" : "2.75rem";
 					toggle = toggle === "map" ? "address" : "map";
 				};
 				container.addEventListener("click", toggleContainer);

@@ -22,7 +22,9 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
+│   │   └── ...
+│   ├── icons/
+│   │   └── ...
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
