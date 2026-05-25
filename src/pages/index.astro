@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 import ContactWpp from "../components/ContactWpp.astro";
+import Facebook from "../components/Facebook.astro";
 import Info from "../components/Info.astro";
 import Instagram from "../components/Instagram.astro";
 import SchedulesMaps from "../components/SchedulesMaps.astro";
@@ -32,8 +33,9 @@ import SectionContainer from "../components/SectionContainer.astro";
 			<ContactWpp />
 		</SectionContainer>
 
-		<SectionContainer class="flex justify-center">
+		<SectionContainer class="flex flex-col md:flex-row items-center justify-evenly">
 			<Instagram />
+			<Facebook />
 		</SectionContainer>
 	</main>
 </Layout>
