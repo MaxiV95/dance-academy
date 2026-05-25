@@ -1,51 +1,175 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+import Header from "../components/Header.astro";
+
 interface Props {
 	title: string;
+	description: string;
+	keywords: string;
 }
 
-const { title } = Astro.props;
+const { description, title, keywords } = Astro.props;
+const imgUrl = "https://maxiv95.github.io/dance-academy/images/banner.webp";
+// const baseUrl = "https://www.salsaencordoba.com.ar/";
+const baseUrl = "https://maxiv95.github.io/dance-academy/";
+const canonicalUrl = "https://maxiv95.github.io/dance-academy/";
+const fbAppId = "0";
+// const fontUrl = "https://maxiv95.github.io/dance-academy/fonts/TROGLOP_.ttf";
 ---
 
 <!doctype html>
-<html lang="en">
+<html dir="ltr" lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{title}</title>
+
+		<!-- Meta-etiquetas para SEO -->
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="language" content="es-AR" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Meta-etiqueta Canonical -->
+		<link rel="canonical" href={canonicalUrl} />
+
+		<!-- Meta-etiquetas Open Graph para redes sociales -->
+		<meta property="fb:admins" content={fbAppId} />
+		<meta property="fb:app_id" content={fbAppId} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={imgUrl} />
+		<meta property="og:locale" content="es_AR" />
+		<meta property="og:site_name" content={title} />
+		<meta property="og:title" content={title} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={baseUrl} />
+
+		<!-- Metadatos geográficos -->
+		<meta name="geo.region" content="AR" />
+		<meta name="geo.placename" content="Córdoba" />
+		<meta name="geo.position" content="-31.421361, -64.189472" />
+		<meta name="ICBM" content="-31.421361, -64.189472" />
+
+		<!-- Información adicional -->
+		<meta name="author" content="Maximiliano Van Megroot" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+		<meta
+			name="google-site-verification"
+			content="Pw594qDKAiBdRXrcHRW7nV-SgdZ_IjdzfGNbRSDsMXk"
+		/>
+
+		<!-- Fuentes -->
+		<!-- Preload de la fuente para mejorar el rendimiento -->
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+			as="style"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<!-- Carga perezosa de las fuentes -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+			rel="stylesheet"
+			media="print"
+		/>
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
+
+		<ViewTransitions />
 	</head>
-	<body>
+	<body
+		class="relative text-white bg-sky-950 min-h-screen w-full bg-cover bg-center bg-[url('https://maxiv95.github.io/dance-academy/images/Designer.webp')]"
+	>
+		<Header />
+
 		<slot />
+
+		<style is:global>
+			:root {
+				color-scheme: dark light;
+			}
+			html {
+				font-family: "Onest Variable", system-ui, sans-serif;
+				scroll-behavior: smooth;
+			}
+			body {
+				font-family: "Lora", serif;
+				font-optical-sizing: auto;
+				font-weight: 400;
+				font-style: normal;
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh;
+			}
+			h1,
+			h2,
+			h3,
+			h4 {
+				text-wrap: balance;
+			}
+			p {
+				text-wrap: pretty;
+				line-height: 1.1rem;
+			}
+			.text-shadow {
+				text-shadow:
+					1px 1px 1px black,
+					-1px -1px 0px black,
+					1px -1px 1px black,
+					-1px 1px 1px black;
+			}
+			.fontOnest {
+				font-family: "Onest Variable", system-ui, sans-serifs;
+			}
+			@media (prefers-reduced-motion: reduce) {
+				html {
+					scroll-behavior: auto;
+				}
+			}
+
+			@font-face {
+				font-family: "TrogloP";
+				src: url("https://maxiv95.github.io/dance-academy/fonts/TROGLOP_.ttf")
+					format("truetype");
+				font-weight: normal;
+				font-style: normal;
+				font-display: swap;
+			}
+			.troglo-title {
+				font-family: "TrogloP", sans-serif;
+				color: #000; /* Color del texto negro */
+				text-shadow:
+					0 0 3px #ff0,
+					0 0 4px #ff0,
+					0 0 5px #ff0;
+			}
+
+			.animate {
+				view-timeline-name: --section;
+				view-timeline: block;
+				animation-timeline: --section;
+				animation-name: show;
+				animation-range: 5% cover 30%;
+				animation-fill-mode: both;
+				transition:
+					opacity 2s linear,
+					transform 2s linear;
+			}
+			@keyframes show {
+				from {
+					opacity: 0;
+					scale: 50%;
+				}
+				to {
+					opacity: 1;
+					transform: 100%;
+				}
+			}
+		</style>
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

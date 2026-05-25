@@ -22,7 +22,9 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
+│   │   └── ...
+│   ├── icons/
+│   │   └── ...
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
@@ -52,3 +54,4 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+

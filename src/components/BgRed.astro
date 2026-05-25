@@ -1,0 +1,28 @@
+---
+
+---
+
+<div class="relative">
+	<div class=`gradient-red-background absolute w-full`></div>
+	<div class=`radial-red-background absolute w-full`></div>
+	<slot />
+</div>
+
+<style>
+	.gradient-red-background {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 40%;
+		background: linear-gradient(0turn, red, rgba(0, 0, 0, 0), red);
+		z-index: -1;
+	}
+	.radial-red-background {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 40%;
+		background: radial-gradient(circle, black 80%, red 100%);
+		z-index: -2;
+	}
+</style>

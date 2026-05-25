@@ -1,0 +1,37 @@
+---
+
+---
+
+<>
+	<div class=`gradient-yellow-background absolute w-full rounded-sm`></div>
+	<div class=`radial-yellow-background absolute w-full rounded-sm`></div>
+	<slot class="fontOnest" />
+</>
+
+<style>
+	.gradient-yellow-background {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 90%;
+		background: linear-gradient(
+			0turn,
+			rgba(255, 255, 0, 0.9) 10%,
+			rgba(0, 0, 0, 0) 45%,
+			rgba(255, 255, 0, 0.9) 90%
+		);
+		z-index: -1;
+	}
+	.radial-yellow-background {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 90%;
+		background: radial-gradient(
+			circle,
+			rgb(255, 160, 0.1) 80%,
+			rgba(255, 255, 0, 0.9) 100%
+		);
+		z-index: -2;
+	}
+</style>
