@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Info from "../components/Info.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 ---
 
 <Layout
@@ -10,4 +12,8 @@ import Layout from "../layouts/Layout.astro";
 	<main class="px-4">
 		<hr class="mb-10 w-0" />
 	</main>
+
+	<SectionContainer>
+		<Info />
+	</SectionContainer>
 </Layout>
